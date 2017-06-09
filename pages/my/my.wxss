@@ -1,0 +1,49 @@
+page{
+    background-color: #eaeaea;
+}
+.my_header{
+    background-color: white;
+    padding: 30rpx 0;
+}
+.my_item{
+    width: 100%;
+    background-color: white;
+    margin: 36rpx 0 0 0;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    background-color:darkgrey;
+}
+.userinfo-nickname {
+    display: inline-block;
+    margin: 30rpx 0 17rpx 0;
+    font-weight: bold;
+}
+.hr{
+    width: 94%;
+    margin: 0 auto;
+    border-top: 1rpx solid #ffcfb7;
+}
+.my_item view{
+    line-height: 100rpx;
+    background-size: 24rpx 42rpx;
+    margin: 0 0 0 40rpx
+}
+.my_item view image:nth-child(1){
+    float: left;
+    width: 35rpx;
+    height: 38rpx;
+    margin: 30rpx 25rpx 0 0;
+}
+.my_item view image:nth-child(2){
+    float: right;
+    width: 35rpx;
+    height: 38rpx;
+    margin: 32rpx 25rpx 0 0;
+}

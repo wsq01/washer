@@ -1,0 +1,9 @@
+<view>
+    <view class="my_header userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+    <view class="my_item">
+        <view class="myOrder" bindtap="toMyOrder">我的订单<image src="../../images/orderIcon.png"></image><image src="../../images/rightIcon.png"></image></view>
+    </view>
+</view>

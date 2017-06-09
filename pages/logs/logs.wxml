@@ -1,0 +1,4 @@
+<view class="container">
+    <image src="../../images/index.png" class="index_pic"></image>
+    <button class="index_btn" bindtap="toLogin">登录</button>
+</view>

@@ -1,0 +1,96 @@
+.pattern_top{
+    width: 100%;
+    height: 220rpx;
+    background-color: #e72b6c;
+}
+.pattern_title{
+    margin: 40rpx auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.pattern_title text{
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    margin: auto;
+}
+.selectPattern{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.swiper{
+    height: 504rpx;
+    width: 100%;
+}
+.pattern_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.vLift{
+    margin: auto;
+    padding: 0 30rpx;
+    width: 85rpx;
+    height: 85rpx;
+}
+.pattern_content image{
+    display: block;
+    width: 85rpx;
+    height: 85rpx;
+}
+
+.pattern_item{
+    width: 387rpx;
+    height: 100rpx;
+    border: 2px solid #e72b6c;
+    border-radius: 10rpx/10rpx;
+    margin: 30rpx 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.item_text text{
+    color: #e72b6c;
+    font-size: 35rpx;
+    text-align: center;
+}
+.item_text text:nth-child(1){
+    font-size: 40rpx;
+}
+.pattern_item text{
+    display: block;
+}
+.item_line{
+    height: 100%;
+    border-left: 1px dashed #e72b6c;
+    margin: 0 50rpx 0 40rpx;
+}
+.pattern_btn{
+    background-color: #e72b6c;
+    color: white;
+    font-weight: bold;
+    font-size: 35rpx;
+    padding: 0 40rpx;
+    margin: 40rpx 0;
+}
+.pattern_foot{
+    display: block;
+    font-size: 24rpx;
+    margin: 0 0 60rpx 0;
+    color: #8b8b8b;
+}
+.pattern_item image{
+    position: absolute;
+    right: -2rpx;
+    top: -2rpx;
+    width: 41rpx;
+    height: 46rpx;
+}

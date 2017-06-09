@@ -1,0 +1,25 @@
+<view class="search_device" wx:if="{{!searchid}}">
+    <text>请扫描机身二维码</text>
+</view>
+<view class="bg" wx:if="{{searchid}}">
+    <view wx:for="{{floors}}">
+        <text class="floor-num">本楼层</text>
+        <view class="floor">
+            <view class="floor-wash">
+                <text class="wash-type">洗衣机</text>
+                <text class="wash-leisure">空闲</text>
+                <text class="leisure-num">{{item.xfree}}</text>
+                <text class="wash-busy">忙碌</text>
+                <text class="busy-num">{{item.xbusy}}</text>
+            </view>
+            <view class="line"></view>
+            <view class="floor-wash">
+                <text class="wash-type">烘干机</text>
+                <text class="wash-leisure">空闲</text>
+                <text class="leisure-num">{{item.hfree}}</text>
+                <text class="wash-busy">忙碌</text>
+                <text class="busy-num">{{item.hbusy}}</text>
+            </view>
+        </view>
+    </view>
+</view>

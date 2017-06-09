@@ -1,0 +1,15 @@
+<view class="container">
+    <view class="login_item login_tel">
+        <label class="label_item">手机号码</label>
+        <input placeholder="填写手机号码" class="input_item" maxlength="15" bindinput="bindTelInput" />
+        <button class="send_captcha" bindtap="send_captcha" size="mini" disabled="{{sendBtn}}">{{VerifyCode}}</button>
+    </view>
+    <view class="login_item">
+        <label class="label_item">验证码</label>
+        <input placeholder="输入验证码" class="input_item" bindinput="bindCodeInput" />
+    </view>
+    <button class="login_btn" bindtap="login_submit">登录</button>
+    <view class="login_foot">
+        <text>点击登录,即表示已阅读并同意《洗衣服务条款》</text>
+    </view>
+</view>

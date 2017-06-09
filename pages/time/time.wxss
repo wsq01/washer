@@ -1,0 +1,52 @@
+page{
+    background-color: #e72b6c;
+    height: 100%; 
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.surplusTime{
+    width: 86.56%;
+    height: 306rpx;
+    background-color: white;
+    margin: 40rpx 0 40rpx 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.surplusTime text{
+    font-size: 96rpx;
+}
+.surplusTime view{
+    font-size: 48rpx;
+}
+.orderInfo{
+    width: 86.56%;
+    background-color:white;
+    padding: 0 0 30rpx 0;
+}
+.info_icon{
+    width: 157rpx;
+    height: 137rpx;
+    margin:20rpx auto;
+}
+.info_icon image{ 
+    width: 157rpx;
+    height: 137rpx;
+}
+.info_line{
+    width: 100%;
+    border-top: 1px dashed #e72b6c;
+    margin: 65rpx 0 10rpx 0;
+}
+.info_detail text{
+    display: block;
+    line-height: 50rpx;
+    margin: 15rpx 0 15rpx 0;
+    font-size: 30rpx;
+    padding: 0 20rpx 0 20rpx;
+}
