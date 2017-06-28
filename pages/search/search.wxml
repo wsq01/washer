@@ -1,5 +1,8 @@
-<view class="search_device" wx:if="{{!searchid}}">
+<view class="search_device" wx:if="{{!searchid&&socketsLength}}">
     <text>请扫描机身二维码</text>
+</view>
+<view class="search_device" wx:elif="{{socketsLength==0}}">
+    <text>暂无信息！</text>
 </view>
 <view class="bg" wx:if="{{searchid}}">
     <view wx:for="{{floors}}">

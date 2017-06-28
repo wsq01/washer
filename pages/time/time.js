@@ -1,3 +1,4 @@
+var app=getApp()
 var param = {
     data: {
         clock: '',
@@ -10,50 +11,46 @@ var param = {
         channelID:'',
         setTime:'',
         token:'',
-        did:''
+        did:'',
+
+        sid:app.globalData.sid
     },
     onLoad: function (option) {
-        console.log(option);
         var that=this;
         that.setData({
-            avatar:wx.getStorageSync('avatarUrl'),
+            avatar:wx.getStorageSync('avatar'),
             address:option.address,
+            sid:app.globalData.sid,
+            did:option.did,
+            token:option.token,
             total_pay:option.price,
             time_pay:option.time_pay,
             channelID:option.channelID,
-            sitTime:option.duringMs,
+            setTime:option.duringMs,
             duringMs:option.duringMs*60*1000-1*1000
         });
         that.control();
     },
     // 数据点远程控制
     control: function () {
-        var that = this;
-        // var startTime = new Date();
-        // var start1_hour = startTime.getHours();
-        // var start1_min = startTime.getMinutes();
-        // var start_time = that.formatDateTime(startTime);
-        // startTime.setMinutes(startTime.getMinutes() + that.data.pattern_time);
-        // var stop1_hour = startTime.getHours();
-        // var stop1_min = startTime.getMinutes();
-        // that.setData({
-        //     time_pay: start_time
-        // })
+      var that = this;
         wx.request({
             url: 'https://washer.mychaochao.cn/db/gizwit.php',
             data: {
                 cmd: 'control',
+                sid:wx.getStorageSync('sid'),
                 product_key: '68badfdc59634329b3c4be931d7322cb',
                 token: that.data.token,
                 did: that.data.did,
                 attrs: JSON.stringify({
-                    ["ac" + that.data.channelID]: true,
+                    ["switch_" + that.data.channelID]: true,
                     ['countdown' + that.data.channelID]: parseInt(that.data.setTime)
                 })
             },
             method: 'POST',
             header: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+              'Content-Type': 'application/x-www-form-urlencoded',
+              'Cookie': "PHPSESSID=" + that.data.sid
             },
             success: function (res3) {
                 console.log(res3);
@@ -61,8 +58,6 @@ var param = {
             }
         })
     },
-
-
     /* 毫秒级倒计时 */
     count_down: function () {
         var that = this;
@@ -81,8 +76,7 @@ var param = {
             // 放在最后--  
             that.data.duringMs -= 1000;
             that.count_down();
-        }
-            , 1000)
+        }, 990)
     },
     /* 格式化倒计时 */
     date_format: function (micro_second) {

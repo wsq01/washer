@@ -37,11 +37,12 @@ page{
 .info_icon image{ 
     width: 157rpx;
     height: 137rpx;
+    background:darkgrey;
 }
 .info_line{
     width: 100%;
     border-top: 1px dashed #e72b6c;
-    margin: 65rpx 0 10rpx 0;
+    margin: 36rpx 0 10rpx 0;
 }
 .info_detail text{
     display: block;

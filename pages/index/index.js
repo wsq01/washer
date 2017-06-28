@@ -1,4 +1,4 @@
-var app = getApp();
+var app = getApp()
 var param = {
   data: {
     indexBtn: '扫码',
@@ -6,6 +6,7 @@ var param = {
   },
   // 扫码
   scanCode: function () {
+    console.log(this.data.userInfo);
     var that=this;
     wx.request({
           url: 'https://washer.mychaochao.cn/db/user.php',
@@ -19,7 +20,6 @@ var param = {
             'Cookie': "PHPSESSID=" + app.globalData.sid
           },
           success: function (res1) {
-            console.log(res1);
             if(res1.data.mobile==null||res1.data.mobile==""){
               wx.showLoading({
                 title: '请先进行注册',
@@ -53,7 +53,6 @@ var param = {
             'Cookie': "PHPSESSID=" + app.globalData.sid
           },
           success: function (res1) {
-            console.log(res1);
             if (res1.data.sockets.length == 0) {
               wx.showModal({
                 title: '提示',
@@ -71,14 +70,20 @@ var param = {
       }
     })
   },
-  onLoad: function () {
+  onLoad: function (data) {
+    if (data.q) {
+      var url = decodeURIComponent(data.q);// ‘https://washer.mychaochao.cn/db/aaa’, 其中aaa指定唯一值，整个字符串应该作为二维码编号
+      console.log(decodeURIComponent(data.q));
+      wx.navigateTo({
+        url: "../pattern/pattern?washerId=" + url
+      })
+    }
     var that=this;
-    //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){
-      //更新数据
       that.setData({
         userInfo:userInfo
       })
+      wx.setStorageSync('avatar', that.data.userInfo.avatarUrl);
     })
   }
 }
