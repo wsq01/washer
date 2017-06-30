@@ -18,29 +18,32 @@ var param = {
         })
     },
     send_captcha: function () {
+      var that=this;
+      if(that.data.tel!=null){
         wx.request({
-            url: 'https://washer.mychaochao.cn/db/sms.php',
-            data: {
-                cmd: 'send_captcha',
-                mobile: this.data.tel
-            },
-            method: 'POST',
-            header: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Cookie': "PHPSESSID=" + app.globalData.sid
-            },
-            success: function (res) {
-                var total_micro_second = 60 * 1000;
-                //验证码倒计时
-                count_down(this, total_micro_second);
-                wx.showLoading({
-                    title: '短信发送成功',
-                })
-                setTimeout(function () {
-                    wx.hideLoading();
-                }, 1000)
-            }
+          url: 'https://washer.mychaochao.cn/db/sms.php',
+          data: {
+            cmd: 'send_captcha',
+            mobile: this.data.tel
+          },
+          method: 'POST',
+          header: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Cookie': "PHPSESSID=" + app.globalData.sid
+          },
+          success: function (res) {
+            var total_micro_second = 60 * 1000;
+            //验证码倒计时
+            count_down(that, total_micro_second);
+            wx.showLoading({
+              title: '短信发送成功',
+            })
+            setTimeout(function () {
+              wx.hideLoading();
+            }, 1000)
+          }
         })
+      }
     },
     // 注册按钮
     login_submit: function () {

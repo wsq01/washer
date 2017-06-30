@@ -44,7 +44,7 @@ page{
 }
 .send_captcha{
     position: absolute;
-    color: #d3d1d2;
+    /*color: #d3d1d2;*/
     right: 20rpx;
     top: 24rpx;
     z-index: 10;

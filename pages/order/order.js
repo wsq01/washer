@@ -49,12 +49,18 @@ Page({
           }else{
             order[i].status="已完成"
           }
-          if(order[i].mode=="3"){
+          if(order[i].mode=="2"){
             order[i].mode="快速洗"
-          }else if(order[i].mode=="2"){
+          }else if(order[i].mode=="1"){
             order[i].mode="标准洗"
+          } else if (order[i].mode == "3"){
+            order[i].mode="轻柔洗"
+          } else if (order[i].mode == "4") {
+            order[i].mode = "单脱"
+          } else if (order[i].mode == "5") {
+            order[i].mode = "漂脱"
           }else{
-            order[i].mode="精细洗"
+            order[i].mode = "单洗"
           }
         }
         that.setData({

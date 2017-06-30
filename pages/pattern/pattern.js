@@ -170,8 +170,8 @@ var param = {
         that.setData({
           ID: res.data.id
         });
-        // that.resPayment();
-        that.confirm_pay();
+        that.resPayment();
+        // that.confirm_pay();
       }
     })
   },
