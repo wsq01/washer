@@ -42,6 +42,7 @@
 }
 .myOrder {
   background-color: #eaeaea;
+  cursor: pointer;
 }
 
 .myOrder_item {

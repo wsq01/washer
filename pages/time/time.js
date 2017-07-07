@@ -12,21 +12,21 @@ var param = {
         setTime:'',
         token:'',
         did:'',
-
-        sid:app.globalData.sid
+        sid:''
     },
     onLoad: function (option) {
-        var that=this;
+      wx.setStorageSync('duringMs', option.duringMs);
+      var that = this;
         that.setData({
             avatar:wx.getStorageSync('avatar'),
             address:option.address,
-            sid:app.globalData.sid,
             did:option.did,
             token:option.token,
             total_pay:option.price,
             time_pay:option.time_pay,
             channelID:option.channelID,
             setTime:option.duringMs,
+            sid:app.globalData.sid,
             duringMs:option.duringMs*60*1000-1*1000
         });
         that.control();
@@ -38,8 +38,7 @@ var param = {
             url: 'https://washer.mychaochao.cn/db/gizwit.php',
             data: {
                 cmd: 'control',
-                sid:wx.getStorageSync('sid'),
-                product_key: '68badfdc59634329b3c4be931d7322cb',
+                sid: that.data.sid,
                 token: that.data.token,
                 did: that.data.did,
                 attrs: JSON.stringify({
@@ -94,6 +93,6 @@ var param = {
     /* 分秒位数补0 */
     fill_zero_prefix: function (num) {
         return num < 10 ? "0" + num : num
-    },
+    }
 }
 Page(param)

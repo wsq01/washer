@@ -1,12 +1,13 @@
 {
     "pages": [
       "pages/index/index",
+      "pages/pattern/pattern",
       "pages/login/login",
       "pages/recharge/recharge",
       "pages/time/time",
-      "pages/pattern/pattern",
       "pages/order/order",
       "pages/search/search",
+      "pages/countDown/countDown",
       "pages/my/my"
     ],
     "window": {
@@ -15,7 +16,7 @@
       "navigationBarTitleText": "首页",
       "backgroundColor": "#eeeeee",
       "backgroundTextStyle": "light",
-      "enablePullDownRefresh": false
+      "enablePullDownRefresh": true
     },
     "tabBar": {
       "list": [{

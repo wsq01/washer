@@ -1,75 +1,64 @@
-page{
-    background-color: #e7e6e8;
-    font-size: 28rpx;
-    height: 100%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+page {
+  background-color: #e7e6e8;
+  font-size: 28rpx;
+  /*height: 100%;*/
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.search_device{
-    height: 100%;
-    width: 100%;
-    text-align: center;
+
+.search_device {
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
-.search_device text{
-    display: inline-block;
-    width: 100%;
-    font-size: 60rpx;
-    margin-top: 48%;
+
+.search_device text {
+  display: inline-block;
+  width: 100%;
+  font-size: 60rpx;
+  margin-top: 48%;
 }
-.bg{
-    background-color: #e7e6e8;
+
+.floor-num {
+  display: block;
+  margin: 30rpx 10rpx 13rpx 30rpx;
 }
-.floor{
-    background-color: #fff;
-    margin: 0 10rpx;
-    border: 2px solid #f7f1f1;
-    padding: 35rpx 0 35rpx 30rpx;
+
+.red {
+  color: #c82829;
 }
-.floor-wash{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+
+.green {
+  color: #718c00;
 }
-.floor-num{
-    display: block;
-    margin: 13rpx 10rpx 13rpx 30rpx;
+
+.my_item {
+  width: 100%;
+  background-color: white;
+  margin: 30rpx 0 0 0;
 }
-.wash-type{
-    color: #de6428;
-    margin: 0 107rpx 0 0;
+
+.my_item .washer_item {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  line-height: 80rpx;
+  background-size: 24rpx 42rpx;
+  cursor: pointer;
 }
-.leisure-num{
-    display: inline-block;
-    border-radius: 50%;
-    background-color: #6e51a1;
-    font-size: 30rpx;
-    color: #fff;
-    width: 30rpx;
-    height: 30rpx;
-    text-align: center;
-    line-height: 30rpx;
-    margin: 0 58rpx 0 58rpx;
+
+.washer_item text {
+  margin: 0 40rpx 0 40rpx;
 }
-.busy-num{
-    display: inline-block;
-    border-radius: 50%;
-    background-color: #cd416b;
-    font-size: 30rpx;
-    color: #fff;
-    width: 30rpx;
-    height: 30rpx;
-    text-align: center;
-    line-height: 30rpx;
-    margin: 0 58rpx 0 58rpx;
+
+.my_item .hr:last-child {
+  display: none;
 }
-.wash-leisure{
-    color: #6e51a1;
+
+.hr {
+  width: 94%;
+  margin: 0 auto;
+  border-top: 1rpx solid #ffcfb7;
 }
-.wash-busy{
-    color: #cd416b;
-}
-.line{
-    border-bottom: 1px solid #ccc;
-    width: 100%;
-    margin: 30rpx 0 30rpx 0;
+.myWasher{
+  font-size:25rpx;
 }

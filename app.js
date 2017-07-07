@@ -16,7 +16,7 @@ App({
             header: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-            success: function (res) {           
+            success: function (res) {     
               wx.setStorageSync('openid', res.data.openid);
               wx.setStorageSync('sid', res.data.sid);
               that.globalData.sid = res.data.sid;

@@ -4,19 +4,18 @@ var param = {
     price: '15.00', //价格
     pattern_time: 39,  //时间
     current: 0,
-    selected: 1, 
+    selected: 1, //模式
 
     token: '',
     socketId: '',
     washerId: '',
     ID: '', //新添订单id
-    sid: app.globalData.sid,
+    sid: '',
     mac: '',
     did: '',
     address: '',
     channelID: '',
-    time_pay: '',
-    mode: 1 //模式
+    time_pay: ''
   },
   toRight: function () {
     this.setData({
@@ -76,9 +75,6 @@ var param = {
       title: '加载中...',
       icon: 'loading',
       duration: 10000
-    })
-    that.setData({
-      mode: that.data.selected
     })
     that.device_detail();
   },
@@ -157,7 +153,7 @@ var param = {
         duration: that.data.pattern_time,
         socket: that.data.socketId,
         amount: that.data.price,
-        mode: that.data.mode,
+        mode: that.data.selected,
         addr: that.data.address,
         uid: wx.getStorageSync('uid')
       },
@@ -167,11 +163,76 @@ var param = {
         'Cookie': "PHPSESSID=" + that.data.sid
       },
       success: function (res) {
+        wx.hideToast();
         that.setData({
           ID: res.data.id
         });
-        that.resPayment();
+        wx.showActionSheet({
+          itemList: ['余额支付', '微信支付'],
+          success: function (res) {
+            if(res.tapIndex==0){
+              that.getUser();
+            }else{
+              that.resPayment();
+            }
+          },
+          fail: function (res) {
+            console.log(res.errMsg)
+          }
+        })
+        // that.getUser()
+        // that.resPayment();
         // that.confirm_pay();
+      }
+    })
+  },
+  // 余额支付
+  editRecharge:function(){
+    var that = this;
+    wx.request({
+      url: 'https://washer.mychaochao.cn/db/recharge.php',
+      data: {
+        sid: that.data.sid,
+        cmd: 'edit',
+        duration:that.data.pattern_time
+      },
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Cookie': 'PHPSESSID=' + that.data.sid
+      },
+      success: function (res) {
+        console.log(res);
+        if(res.data.errno=="1"){
+          that.confirm_pay();
+        }
+      }
+    })
+  },
+  //  获取余额
+  getUser: function () {
+    var that = this;
+    wx.request({
+      url: 'https://washer.mychaochao.cn/db/user.php',
+      data: {
+        sid: that.data.sid,
+        cmd: 'get'
+      },
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Cookie': 'PHPSESSID=' + that.data.sid
+      },
+      success: function (res) {
+        console.log(res);
+        if(res.data.min=="0"||res.data.min<that.data.pattern_time){
+          wx.showModal({
+            content: '余额不足',
+            showCancel:false
+          })
+        }else{
+          that.editRecharge()
+        }
       }
     })
   },
@@ -217,7 +278,6 @@ var param = {
         cmd: 'confirm_pay',
         sid: that.data.sid,
         id: that.data.ID,
-        openid: wx.getStorageSync('openid')
       },
       method: 'POST',
       header: {
@@ -225,16 +285,16 @@ var param = {
         'Cookie': "PHPSESSID=" + that.data.sid
       },
       success: function (res) {
+        console.log(res);
         var startTime = new Date();
         var start_time = that.formatDateTime(startTime);
+        wx.setStorageSync('time_pay',startTime );
         that.setData({
           time_pay: start_time
         })
         //跳转页面
         wx.redirectTo({
-          url: '../time/time?address=' + that.data.address + '&price=' + that.data.price + '&time_pay=' + that.data.time_pay + '&duringMs=' + that.data.pattern_time + '&did=' + that.data.did + '&token=' + that.data.token + '&channelID=' + that.data.channelID,
-          success: function (res) {
-          }
+          url: '../time/time?address=' + that.data.address + '&price=' + that.data.price + '&time_pay=' + that.data.time_pay + '&duringMs=' + that.data.pattern_time + '&did=' + that.data.did + '&token=' + that.data.token + '&channelID=' + that.data.channelID
         })
       }
     })
