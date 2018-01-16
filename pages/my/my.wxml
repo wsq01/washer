@@ -1,12 +1,45 @@
-<view>
-    <view class="my_header userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<view class="container">
+  <view class="my_top">
+
+  </view>
+  <view class="my_content">
+    <view class="my_info">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+          <image class="logo" src="{{userInfo.avatarUrl?userInfo.avatarUrl:'../../images/people_r.png'}}"></image>
+          <image class="wave" src="../../images/wave.png" mode="aspectFill"></image>
+          <image class="wave wave-bg" src="../../images/wave.png" mode="aspectFill"></image>
+      </view>
+       <view class="my_name">
+        <text>{{userInfo.nickName}}</text>
+      </view>
+      <view class="my_balance">
+        <text>剩余时间:{{myMin}}分钟</text>
+      </view>
     </view>
     <view class="my_item">
-        <view class="myOrder" bindtap="toMyOrder">我的订单<image src="../../images/orderIcon.png"></image><image src="../../images/rightIcon.png"></image></view>
+      <view class="myOrder" bindtap="resPayment">
+        <text>优惠充值</text>
+        <text>充100得2000分钟</text>
+        <image src="../../images/rightIcon.png"></image>
+      </view>
     </view>
     <view class="my_item">
-        <view class="myOrder" bindtap="toRecharge">充值优惠<image src="../../images/orderIcon.png"></image><image src="../../images/rightIcon.png"></image></view>
+      <view class="myOrder" bindtap="history">充值历史
+        <image src="../../images/rightIcon.png"></image>
+      </view>
     </view>
+    <view class="my_item">
+      <view class="myOrder" bindtap="toMyOrder">使用历史
+        <image src="../../images/rightIcon.png"></image>
+      </view>
+    </view>
+    <view class="my_item">
+      <view class="myOrder" bindtap="agreement">用户协议
+        <image src="../../images/rightIcon.png"></image>
+      </view>
+    </view>
+    <view class="my_item my_service" bindtap="mackCall">
+      客服电话:010-64392589
+    </view>
+  </view>
 </view>

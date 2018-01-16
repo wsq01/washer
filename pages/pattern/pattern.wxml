@@ -1,85 +1,14 @@
 <view>
-  <view class="pattern_top"></view>
-  <view class="pattern_title">
-    <text></text>模式选择
-    <text></text>
-  </view>
+  <view class="pattern_top"><image src="../../images/pattern_bg.jpg" mode="aspectFill"></image></view>
   <view class="pattern_content">
-    <view class="vLift">
-      <image src="../../images/left.png" bindtap="toLeft" wx:if="{{current==1}}"></image>
-    </view>
-    <swiper class="swiper" current="{{current}}" bindchange="changeSwiper">
-      <swiper-item>
-        <view class="selectPattern">
-          <view class="pattern_item" bindtap="selectItem1">
-          <image src="../../images/selected.png" wx:if="{{selected==1}}"></image>
-            <view class="item_text">
-              <text>￥{{price}}</text>
-              <text>39分钟</text>
-            </view>
-            <view class="item_line"></view>
-            <view>标准洗</view>
-          </view>
-          <view class="pattern_item" bindtap="selectItem2">
-          <image src="../../images/selected.png" wx:if="{{selected==2}}"></image>
-            <view class="item_text">
-              <text>￥{{price}}</text>
-              <text>15分钟</text>
-            </view>
-            <view class="item_line"></view>
-            <view>快速洗</view>
-          </view>
-          <view class="pattern_item" bindtap="selectItem3">
-          <image src="../../images/selected.png" wx:if="{{selected==3}}"></image>
-            <view class="item_text">
-              <text>￥{{price}}</text>
-              <text>35分钟</text>
-            </view>
-            <view class="item_line"></view>
-            <view>轻柔洗</view>
-          </view>
-        </view>
-      </swiper-item>
-      <swiper-item>
-        <view class="selectPattern">
-          <view class="pattern_item" bindtap="selectItem4">
-          <image src="../../images/selected.png" wx:if="{{selected==4}}"></image>
-            <view class="item_text">
-              <text>￥{{price}}</text>
-              <text>7分钟</text>
-            </view>
-            <view class="item_line"></view>
-            <view>单脱</view>
-          </view>
-          <view class="pattern_item" bindtap="selectItem5">
-          <image src="../../images/selected.png" wx:if="{{selected==5}}"></image>
-            <view class="item_text">
-              <text>￥{{price}}</text>
-              <text>27分钟</text>
-            </view>
-            <view class="item_line"></view>
-            <view>漂脱</view>
-          </view>
-          <view class="pattern_item" bindtap="selectItem6">
-          <image src="../../images/selected.png" wx:if="{{selected==6}}"></image>
-            <view class="item_text">
-              <text>￥{{price}}</text>
-              <text>15分钟</text>
-            </view>
-            <view class="item_line"></view>
-            <view>单洗</view>
-          </view>
-        </view>
-      </swiper-item>
-    </swiper>
-    <view class="vLift">
-      <image src="../../images/right.png" bindtap="toRight" wx:if="{{current==0}}"></image>
+    <view class="pattern_item" wx:for="{{itemData}}" data-index="{{index}}" data-mode="{{item.name}}" data-money="{{item.amount}}" data-time="{{item.duration}}" bindtap="selected">
+      <text class="pattern_title">{{item.name}}</text>
+      <text class="pattern_money" hidden="{{item.selectedItem==true?true:false}}">￥{{item.amount}}</text>
+      <text class="pattern_time" hidden="{{item.selectedItem==true?true:false}}">{{item.duration}}min</text>
+      <image src="{{item.selectedItem==true?'../../images/pattern_selected.jpg':'../../images/pattern.png'}}" mode="aspectFit"></image>
     </view>
   </view>
-  <view class="selectPattern">
-    <button class="pattern_btn" bindtap="toPay">确定</button>
-    <view>
-      <text class="pattern_foot">自助微洗衣服务协议</text>
-    </view>
+  <view class="pattern_btn">
+    <button class="confirmBtn" bindtap="toPay" disabled="{{selected==0?true:false}}">确定</button>
   </view>
 </view>

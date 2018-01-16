@@ -1,0 +1,18 @@
+<view class="topup_bg">
+<view class="topup_content">
+  <view class="" wx:if="{{historyItem.length==0?true:false}}">暂无充值历史</view>
+  
+    <block wx:else>
+    <view class="topup_list header">
+      <view class="">编号</view>
+      <view class="classname">充值时间</view>
+      <view class="classname">充值金额</view>
+    </view>
+    <view class="topup_list" wx:for="{{historyItem}}">
+      <view class="">{{index+1}}</view>
+      <view class="">{{item.time}}</view>
+      <view>￥{{item.topup}}</view>
+    </view>
+  </block>
+  </view>
+</view>

@@ -1,18 +1,24 @@
+<view class="detail_top">
+  <view class="detail_money">
+    <text wx:if="{{payType=='1'}}">￥{{total_pay}}</text>
+    <text wx:else>{{total_pay}}分钟</text>
+  </view>
+</view>
 <view class="container">
-    <view class="surplusTime">
-        <text>{{clock}}</text>
-        <view>剩余时间</view>
-    </view>
-    <view class="orderInfo">
-        <view class="info_icon">
-            <image src="{{avatar}}"></image>
-        </view>
-        <view class="info_line"></view>
-        <view class="info_detail">
-            <text>使用设备：{{address}}</text>
-            <text>支付时间：{{time_pay}}</text>
-            <text>支付金额：{{total_pay}}元</text>
-            <text>优惠金额：{{discount}}元</text>
-        </view>
-    </view>
+  <view class="detail_school">{{mySchool}}</view>
+  <view class="detail_addr">{{myAddr}}</view>
+  <view class="detail_startTime">下单时间：{{time_pay}}</view>
+  <view class="detail_process">
+    <progress percent="{{progress}}" color="#4fc1e9" stroke-width="20"/>
+  </view>
+  <view class="detail_item">
+    <image src="../../images/order_icon1.png" mode="aspectFit"></image>
+    <text class="detail_time">剩余时间</text>
+    <text class="time_name">{{clock}}</text>
+  </view>
+  <view class="detail_item">
+    <image src="../../images/order_icon2.png" mode="aspectFit"></image>
+    <text class="detail_mode">洗衣模式</text>
+    <text class="mode_name">{{myMode}}</text>
+  </view>
 </view>

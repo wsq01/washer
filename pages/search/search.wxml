@@ -1,26 +1,41 @@
 <view class="search_device" wx:if="{{!searchid}}">
+  <image src="../../images/bgc.jpg" mode="aspectFit"></image>
   <text>请扫描机身二维码</text>
 </view>
-<view class="search_device" wx:elif="{{socketsLength}}">
+<view class="search_device" wx:elif="{{searchid&&socketsLength}}">
+  <image src="../../images/bgc.jpg" mode="aspectFit"></image>
   <text>暂无信息！</text>
 </view>
-<view class="" wx:else>
-  <text class="floor-num">本楼层洗衣机状态：</text>
-  <view class="my_item">
-    <view class="washer_item">
-      <text> 设  备</text>
-      <text>剩余时间</text>
-      <text> </text>
-      <text>状态</text>
+<view wx:else class="container">
+  <view class="search_top">
+    <view class="addr">{{addr}}</view>
+    <view class="total_status">
+      <view class="total_item">
+        <text>{{freeNum}}</text>
+        <text>空闲</text>
+      </view>
+      <view class="total_item">
+        <text class="busy">{{busyNum}}</text>
+        <text>忙碌</text>
+      </view>
+    </view>
+    <view class="total_money" hidden="true">
+      ￥{{price}}
     </view>
   </view>
-  <view class="my_item">
+  <view class="search_content">
     <block wx:for="{{items}}">
-      <view class="washer_item">
-        <text>{{item.socket_name+item.index}}</text>
-        <text>{{item.diff}}</text>
-        <text class="myWasher">{{item.is_self==1?'我的':''}}</text>
-        <text class="{{item.statusClass}}">{{item.socket_status}}</text>
+      <view class="search_item">
+        <view class="item_left">
+          <text>{{item.socket_name+item.index}}</text>
+          <text hidden="{{wxTimerList[item.socket+item.index].wxTimerSecond?false:true}}">{{wxTimerList[item.socket+item.index].wxTimer}}</text>
+        </view>
+        <view class="item_my">
+          <text class="myWasher">{{item.is_self==1?'我的':''}}</text>
+        </view>
+        <view class="item_status {{item.statusClass}}">
+          <text>{{item.socket_status}}</text>
+        </view>
       </view>
       <view class="hr"></view>
     </block>

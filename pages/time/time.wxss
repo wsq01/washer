@@ -1,5 +1,4 @@
 page{
-    background-color: #e72b6c;
     height: 100%; 
 }
 .container{
@@ -8,7 +7,69 @@ page{
     align-items: center;
     width: 100%;
 }
-.surplusTime{
+.detail_top{
+  height: 175rpx;
+  width: 100%;
+  background-color: #4fc1e9;
+  border-bottom: 8rpx solid #3bafda;
+  position: relative;
+  margin-bottom: 74rpx;
+}
+.detail_money {
+  border-radius: 50%;
+  background-color: rgb( 59, 175, 218 );
+  position: absolute;
+  left:292.5rpx;
+  bottom:-82.5rpx;
+  width: 165rpx;
+  height: 165rpx;
+  text-align: center;
+  line-height: 165rpx;
+  color: #fff;
+}
+.detail_school{
+  margin: 45rpx 0 20rpx 0;
+  font-size: 40rpx;
+}
+.detail_addr{
+  font-size: 30rpx;
+  margin: 20rpx 0;
+}
+.detail_startTime{
+  font-size: 30rpx;
+  margin: 23rpx 0;
+}
+.detail_process{
+  width: 580rpx;
+  margin: 10rpx 0 030rpx 0;
+}
+.detail_item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 10rpx auto;
+  padding: 0 92rpx 0 92rpx;
+}
+.detail_item image{
+  display: inline-block;
+  width: 27rpx;
+  height: 31rpx;
+  flex: 1;
+  padding-top: 1rpx;
+}
+.detail_mode,.detail_time{
+  flex: 5;
+  font-size: 28rpx;
+  color: #707982;
+}
+.mode_name,.time_name{
+  flex: 4;
+  font-size: 28rpx;
+  color:#4fc1e9;
+}
+/*.surplusTime{
     width: 86.56%;
     height: 306rpx;
     background-color: white;
@@ -50,4 +111,4 @@ page{
     margin: 15rpx 0 15rpx 0;
     font-size: 30rpx;
     padding: 0 20rpx 0 20rpx;
-}
+}*/

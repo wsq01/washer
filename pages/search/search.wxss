@@ -1,64 +1,115 @@
 page {
-  background-color: #e7e6e8;
+  background-color: #f1f3f4;
   font-size: 28rpx;
-  /*height: 100%;*/
+  height: 100%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.search_top{
+  width: 678rpx;
+  height: 160rpx;
+  margin: 0 auto;
+  border-radius: 23rpx;
+  background-color: #fff;
+}
+.search_top .addr{
+  padding: 24rpx 0 24rpx 40rpx;
+}
+.search_top .total_status{
+  float: left;
+}
+.search_top .total_money{
+  float: right
+}
+.total_item{
+  float: left;
+  width: 56rpx;
+  text-align: center;
+  margin: 0 0 0 40rpx;
+}
+.total_money{
+  margin:20rpx 40rpx 0 0;
 
+}
+.total_item text{
+  display: block;
+}
+.total_item text:nth-child(1){
+  color: #80cad2;
+}
+.total_item text:nth-child(1).busy{
+  color: #ffb23b;
+}
+.search_content{
+  width: 678rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  border-top: 1rpx dashed #80cad2;
+}
+.search_item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  height: 104rpx;
+  cursor: pointer;
+  background-size: 24rpx 42rpx;
+}
+.item_status{
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+  background-color: #9ea7b3;
+  line-height: 76rpx;
+  font-size: 25rpx;
+  color: #fff;
+  margin:14rpx 40rpx 0 0;
+}
+.blue{
+  background-color: #80cad2;
+}
+.item_left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 0 40rpx;
+}
+.item_left text:nth-child(1){
+  margin:0rpx 0 10rpx 0;
+}
+.item_left text:nth-child(2){
+  font-size: 25rpx;
+  color: #949393;
+}
+.item_my{
+  line-height: 104rpx;
+}
 .search_device {
   height: 100%;
   width: 100%;
   text-align: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-
+.search_device image{
+  width: 200rpx;
+  height: 260rpx;
+  display: block;
+  margin: 0 auto;
+}
 .search_device text {
   display: inline-block;
   width: 100%;
-  font-size: 60rpx;
-  margin-top: 48%;
+  font-size: 35rpx;
 }
-
-.floor-num {
-  display: block;
-  margin: 30rpx 10rpx 13rpx 30rpx;
-}
-
-.red {
-  color: #c82829;
-}
-
-.green {
-  color: #718c00;
-}
-
-.my_item {
-  width: 100%;
-  background-color: white;
-  margin: 30rpx 0 0 0;
-}
-
-.my_item .washer_item {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  line-height: 80rpx;
-  background-size: 24rpx 42rpx;
-  cursor: pointer;
-}
-
-.washer_item text {
-  margin: 0 40rpx 0 40rpx;
-}
-
-.my_item .hr:last-child {
-  display: none;
-}
-
 .hr {
   width: 94%;
   margin: 0 auto;
-  border-top: 1rpx solid #ffcfb7;
+  border-top: 1rpx solid rgb( 222, 224, 225 );
 }
 .myWasher{
   font-size:25rpx;
+  flex:1;
 }

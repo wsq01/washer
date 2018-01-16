@@ -1,4 +1,7 @@
-/**order.wxss**/
+page{
+  background-color: #f1f3f4;
+  height: 100%;
+}
 .swiper-tab {
   display: flex;
   justify-content: space-between;
@@ -26,7 +29,6 @@
 }
 
 .swiper-box {
-  margin-top: 82rpx;
   display: block;
   height: 100%;
   width: 100%;
@@ -37,12 +39,34 @@
   text-align: center;
 }
 .empty{
-  margin-top: 105rpx;
   color: #8a8989;
 }
+.empty {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.empty image{
+  width: 200rpx;
+  height: 260rpx;
+  display: block;
+  margin: 0 auto;
+}
+.empty text {
+  display: inline-block;
+  width: 100%;
+  font-size: 35rpx;
+}
+
+
+
 .myOrder {
-  background-color: #eaeaea;
   cursor: pointer;
+  background-color: #fff;
 }
 
 .myOrder_item {
@@ -58,16 +82,17 @@
 
 .item_pic {
   width: 56rpx;
-  height: 48rpx;
-  margin: 0 0 0 20rpx;
+  height: 56rpx;
+  margin: 0 0 0 40rpx;
 }
 
 .item_info {
+  flex: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 10rpx 0 10rpx;
+  margin: 0 10rpx 0 50rpx;
 }
 
 .item_info text {
@@ -98,5 +123,5 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 20rpx 0 0;
+  margin: 0 40rpx 0 0;
 }

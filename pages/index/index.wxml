@@ -1,5 +1,5 @@
 <view class="container">
-    <image src="../../images/indexbg.png"></image>
-    <image src="../../images/index.png" class="index_pic"></image>
+    <image src="../../images/indexbg.jpg"></image>
+    <image src="../../images/index.jpg" class="index_pic"></image>
     <button class="index_btn" bindtap="scanCode">{{indexBtn}}</button>
 </view>

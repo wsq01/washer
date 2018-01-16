@@ -1,0 +1,17 @@
+.title{
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin: 30rpx auto;
+  font-size: 40rpx;
+}
+.main{
+  font-size: 30rpx;
+}
+.subTitle{
+  font-weight: bold;
+  font-size: 34rpx;
+}
+.container{
+  padding: 0 40rpx;
+}

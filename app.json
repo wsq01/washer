@@ -1,17 +1,17 @@
 {
     "pages": [
       "pages/index/index",
-      "pages/pattern/pattern",
-      "pages/login/login",
-      "pages/recharge/recharge",
-      "pages/time/time",
+      "pages/agreement/agreement",
+      "pages/history/history",
       "pages/order/order",
       "pages/search/search",
-      "pages/countDown/countDown",
-      "pages/my/my"
+      "pages/pattern/pattern",
+      "pages/my/my",
+      "pages/login/login",
+      "pages/time/time"
     ],
     "window": {
-      "navigationBarBackgroundColor": "#000",
+      "navigationBarBackgroundColor": "#4fc1e9",
       "navigationBarTextStyle": "white",
       "navigationBarTitleText": "首页",
       "backgroundColor": "#eeeeee",
@@ -23,18 +23,18 @@
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/home.png",
-        "selectedIconPath": "images/homeselect.png"
+        "selectedIconPath": "images/home_selected.png"
       },{
         "pagePath": "pages/search/search",
         "text": "查询",
-        "iconPath": "images/ss.png",
-        "selectedIconPath": "images/ssselect.png"
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search_selected.png"
       },{
         "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "images/my.png",
-        "selectedIconPath": "images/myselect.png"
+        "selectedIconPath": "images/my_selected.png"
       }],
-      "selectedColor": "#6e51a1"
+      "selectedColor": "#62cfee"
     }
 }

@@ -13,7 +13,9 @@ Page({
       mode:'',
       status:'',
       price:''
-    }]
+    }],
+    url:'',
+    sid:''
   },
   onLoad: function () {
     wx.showToast({
@@ -22,6 +24,10 @@ Page({
       duration: 10000
     })
     var that = this;
+    that.setData({
+      url:app.globalData.url,
+      sid:app.globalData.sid,
+    })
     /** 获取系统信息  */
     wx.getSystemInfo({
       success: function (res) {
@@ -37,15 +43,15 @@ Page({
     var that=this;
     // 获取洗衣订单接口
     wx.request({
-      url: 'https://washer.mychaochao.cn/db/order.php',
+      url: that.data.url+'order.php',
       data: {
-        sid: app.globalData.sid,
+        sid: that.data.sid,
         cmd: 'get_orders',
       },
       method: 'POST',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Cookie': "PHPSESSID=" + app.globalData.sid
+        'Cookie': "PHPSESSID=" + that.data.sid
       },
       success: function (res) {
         console.log(res);
@@ -71,6 +77,11 @@ Page({
               order[i].mode = "漂脱"
             } else {
               order[i].mode = "单洗"
+            }
+            if(order[i].paytype=='0'){
+              order[i].payType='余额支付';
+            }else{
+              order[i].payType = '微信支付';
             }
           }
           that.setData({

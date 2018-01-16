@@ -7,6 +7,9 @@ page{
     display: flex;
     flex-direction: column;
 }
+.isDisabled{
+  background-color: #ccc;
+}
 .login_item{
     background-color: white;
     height: 100rpx;
@@ -23,6 +26,7 @@ page{
     padding: 0 0 0 200rpx;
     line-height: 100rpx;
     font-size: 35rpx;
+    width: 330rpx;
 }
 .label_item{
     line-height: 100rpx;
@@ -46,6 +50,9 @@ page{
     position: absolute;
     /*color: #d3d1d2;*/
     right: 20rpx;
-    top: 24rpx;
-    z-index: 10;
+    top: 0;
+    z-index: 100;
+}
+.login_button{
+  margin: 27rpx 0 0 0;
 }
